@@ -1,4 +1,5 @@
 import paramiko
+from colorama import init, Fore, Style
 
 def startAttack(ip, username, password):
     for password in passwords:
@@ -28,4 +29,21 @@ def getInputs():
 
 
 if __name__ == "__main__":
+    banner = """\
+ _______  _______          _________ _______ _________ _______  _______ 
+(  ____ \(  ____ \|\     /|\__   __/(  ____ \\__   __/(  ____ \(  ____ )
+| (    \/| (    \/| )   ( |   ) (   | (    \/   ) (   | (    \/| (    )|
+| (_____ | (_____ | (___) |   | |   | (__       | |   | (__    | (____)|
+(_____  )(_____  )|  ___  |   | |   |  __)      | |   |  __)   |     __)
+      ) |      ) || (   ) |   | |   | (         | |   | (      | (\ (   
+/\____) |/\____) || )   ( |___) (___| )         | |   | (____/\| ) \ \__
+\_______)\_______)|/     \|\_______/|/          )_(   (_______/|/   \__/                                                        
+    """
+    print(f"{Fore.LIGHTRED_EX}{banner}{Style.RESET_ALL}")
+    print()
+    print(f"{Fore.RED}{Style.BRIGHT}[+]  Creator    :  Pavin Das{Style.RESET_ALL}")
+    print(f"{Fore.RED}{Style.BRIGHT}[+]  GitHub     :  PavinDas{Style.RESET_ALL}")
+    print(f"{Fore.RED}{Style.BRIGHT}[+]  Instagram  :  pavin__das{Style.RESET_ALL}")
+    print()
+    print()
     getInputs()
