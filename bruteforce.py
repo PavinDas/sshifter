@@ -18,18 +18,21 @@ def startAttack(ip, username, password):
             print(f"[-] Error: {e}")
 
 def getInputs():
-    ip = input("Enter ip address: ")
-    username = input("Enter username: ")
-    path = input("Enter password path: ")
     try:
+        ip = input("Enter ip address: ")
+        username = input("Enter username: ")
+        path = input("Enter password path: ")
         passwords = open(path)
-        startAttack(ip,username, password)
+        if ip and username and password:
+            tartAttack(ip,username, password)
+    except KeyboardInterrupt as e:
+        print(f"{Fore.RED}{Style.BRIGHT}\n[-]  Exited")
     except Exception as e:
         print(f"[-] Error: {e}")
 
 
 if __name__ == "__main__":
-    banner = """
+    banner = r"""
  _______  _______          _________ _______ _________ _______  _______ 
 (  ____ \(  ____ \|\     /|\__   __/(  ____ \\__   __/(  ____ \(  ____ )
 | (    \/| (    \/| )   ( |   ) (   | (    \/   ) (   | (    \/| (    )|
